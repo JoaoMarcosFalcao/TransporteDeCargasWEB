@@ -2,12 +2,13 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div> class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="">Principal<span class="sr-only">(Atual)</span></a>
       </li>
     </ul>
+    </div>
     <div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -22,13 +23,26 @@
         </li>
       </ul>
     </div>
-    <div>
+      <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/endereco">Enderecos</a>
+          </li>
+        </ul>
+      </div>
+      <div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/cliente-detalhe" >Cliente-Detalhe</a>
         </li>
       </ul>
     </div>
+  <div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/endereco-detalhe" >Endereco-Detalhe</a>
+      </li>
+    </ul>
   </div>
 </nav>
 

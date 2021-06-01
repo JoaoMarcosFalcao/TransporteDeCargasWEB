@@ -2,7 +2,7 @@
   <mat-card>
     <mat-card-content>
       <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-        <p>Para continuar, efetue o login!</p>
+        <p>Para Continuar, Entre com Usuário e Senha!</p>
         <mat-form-field class="full-width-input">
           <input matInput placeholder="Usuário" formControlName="userName" required>
           <mat-error *ngIf="isFieldInvalid('userName')">

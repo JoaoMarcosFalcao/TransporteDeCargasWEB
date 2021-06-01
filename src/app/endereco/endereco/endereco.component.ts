@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {EnderecoDto} from '../../../model/endereco-dto';
+import {EnderecoService } from '../endereco.service';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-endereco',
@@ -15,44 +17,44 @@ export class EnderecoComponent implements OnInit {
   private location: Location,
   private router: Router
 ) { }
-  displayedColumns: string[] = ['id', 'rua', 'numero', 'bairro', 'cidade', 'estado', 'acoes'];
+  displayedColumns: string[] = ['id', 'rua', 'complemento','numero', 'bairro', 'cidade', 'estado', 'acoes'];
 
   endereco: EnderecoDto = {
+
     id: 1,
     rua: 'Rua B',
     numero: '17',
+    complemento: 'casa',
     bairro: 'Serra Alta',
     cidade: 'Barra do Garcas',
     estado: 'Mato Grosso',
   };
 
-  Enderecos: EnderecoDto[];
+  enderecos: EnderecoDto[];
 
   dataSource;
 
   ngOnInit(): void {
-    this.EnderecoService.listarEnderecos().subscribe(dados => {
-      this.Enderecos = dados;
-      this.dataSource = this.Enderecos;
+    this.enderecoService.listarEnderecos().subscribe(dados => {
+      this.enderecos = dados;
+      this.dataSource = this.enderecos;
     });
   }
 
   salvar(): void {
-    this.EnderecoService.salvarEndereco(this.Endereco).subscribe((dados) => {
-      this.EnderecoService.showMessage('Endereco Salvo com sucesso!', false);
-      this.Enderecos.push(dados);
-      this.dataSource = this.Enderecos;
+    this.enderecoService.salvarEndereco(this.endereco).subscribe((dados) => {
+      this.enderecoService.showMessage('Endereco Salvo com sucesso!', false);
+      this.enderecos.push(dados);
+      this.dataSource = this.enderecos;
       location.reload();
     });
   }
   editarEndereco(Endereco: EnderecoDto): void {
-    this.router.navigate(['/Endereco-detalhe', Endereco.id]);
+    this.router.navigate(['/endereco-detalhe', Endereco.id]);
   }
 
   deletarEndereco(Endereco: EnderecoDto): void {
-    this.EnderecoService.deletarEndereco(Endereco.id);
+    this.enderecoService.deletarEndereco(Endereco.id);
   }
 }
 
-
-}

@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'ecommerce-web';
+  title = 'TransporteDeCargas-web';
 
   isLoggedIn$: Observable<boolean>;                  // {1}
 

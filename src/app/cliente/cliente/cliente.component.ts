@@ -16,7 +16,6 @@ export class ClienteComponent implements OnInit {
     private location: Location,
     private router: Router
   ) { }
-
   displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'idTelefone', 'idEndereco', 'acoes'];
 
   cliente: ClienteDto = {

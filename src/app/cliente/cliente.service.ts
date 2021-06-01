@@ -19,7 +19,7 @@ export class ClienteService {
     clientes: ClienteDto[];
 
    listarClientes(): Observable<ClienteDto[]> {
-     const url = `${environment.config.URL_API}/cliente/` ;
+     const url = `${environment.config.URL_API}/cliente/listar` ;
      return this.httpCliente.get<ClienteDto[]>(url).pipe(
        map((clientes) => clientes)
      );
@@ -47,7 +47,7 @@ export class ClienteService {
 
    showMessage(msg: string, isError: boolean = false): void{
       this.snackbar.open(msg, 'X', {
-        duration: 3000,
+        duration: 2000,
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
         panelClass: isError ? ['msg-error'] : ['msg-success'],

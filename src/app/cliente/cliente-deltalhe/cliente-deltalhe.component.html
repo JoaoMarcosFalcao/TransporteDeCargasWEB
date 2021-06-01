@@ -15,11 +15,11 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Nome</mat-label>
-            <input type="text" matInput placeholder="Ex. João" formControlName="nome"
+            <input type="text" matInput placeholder="Ex. Pedro" formControlName="nome"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.nome.hasError('nome') && !getControl.nome.hasError('required')">
-              por favor entre com nome válido!
+              Insira um nome válido!
             </mat-error>
           </mat-form-field>
 
@@ -28,25 +28,41 @@
             <input type="text" matInput placeholder="Ex: 999.999.999-99"  [errorStateMatcher]="matcher"
                    mask="000.000.000-99" required  formControlName="cpf">
             <mat-error *ngIf="getControl.cpf.hasError('cpf') && !getControl.cpf.hasError('required')">
-              por favor entre com cpf válido!
+              Insira um cpf válido!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <mat-label>Primeiro Nome</mat-label>
-            <input type="text" matInput placeholder="Ex: João"  [errorStateMatcher]="matcher"
-                   pattern="[a-zA-Z]*" required formControlName="primeiroNome">
-            <mat-error *ngIf="getControl.primeiroNome.hasError('primeiroNome') && !getControl.primeiroNome.hasError('required')">
-              por favor entre com cpf válido!
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="Ex: email@hotmail.com"  [errorStateMatcher]="matcher"
+                   attach="@hotmail.com" required formControlName="email">
+            <mat-error *ngIf="getControl.email.hasError('email') && !getControl.email.hasError('required')">
+             Insira um e-mail válido!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <mat-label>Data de Nascimento</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-label>idTelefone</mat-label>
+            <input type="text" matInput placeholder="Ex: 1"  [errorStateMatcher]="matcher"
+                   [errorStateMatcher]="matcher"
+                   required>
+<!--                   mask="1" required  formControlName="idTelefone">-->
+            <mat-error *ngIf="getControl.idTelefone.hasError('idTelefone') && !getControl.idTelefone.hasError('required')">
+              Insira o ID de um Telefone já cadastro válido!
+            </mat-error>
           </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>idEndereco</mat-label>
+            <input type="text" matInput placeholder="Ex: 1"  [errorStateMatcher]="matcher"
+                   [errorStateMatcher]="matcher"
+                   required>
+<!--                   mask="1" required  formControlName="IdEndereco">-->
+            <mat-error *ngIf="getControl.idEndereco.hasError('idEndereco') && !getControl.idEndereco.hasError('required')">
+              Insira o ID de um Endereco já cadastro válido!
+            </mat-error>
+          </mat-form-field>
+
 
           <hr>
 

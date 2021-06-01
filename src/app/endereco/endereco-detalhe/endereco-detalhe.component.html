@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="card-header">
+    Manutenção dos Endereços:
+  </div>
+  <div class="card-body">
+    <div class="card-container">
+      <div>
+        <form [formGroup]="formEndereco" (ngSubmit)="onSubmit"  class="form-exemplo">
+          <div style="display: none">
+            <mat-form-field class="example-full-width">
+              <mat-label>ID</mat-label>
+              <input matInput  formControlName="id">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Rua</mat-label>
+            <input type="text" matInput placeholder="Ex. Rua B" formControlName="rua"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.nome.hasError('rua') && !getControl.rua.hasError('required')">
+             Digite uma rua valida!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Numero</mat-label>
+            <input type="text" matInput placeholder="Ex. 17" formControlName="numero"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.nome.hasError('numero') && !getControl.numero.hasError('required')">
+              Digite o numero da casa valido!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Bairro</mat-label>
+            <input type="text" matInput placeholder="Ex. Serra Alta" formControlName="bairro"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.bairro.hasError('bairro') && !getControl.bairro.hasError('required')">
+              Digite um bairro valido!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Cidade</mat-label>
+            <input type="text" matInput placeholder="Ex. Barra do Garças" formControlName="cidade"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.cidade.hasError('cidade') && !getControl.cidade.hasError('required')">
+              Digite uma cidade valida!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Estado</mat-label>
+            <input type="text" matInput placeholder="Ex. Mato Grosso" formControlName="estado"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.estado.hasError('estado') && !getControl.estado.hasError('required')">
+              Digite um Estado valido!
+            </mat-error>
+          </mat-form-field>
+
+          <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
