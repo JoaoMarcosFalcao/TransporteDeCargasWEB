@@ -13,12 +13,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {ClienteRoutingModule} from './cliente/cliente-routing.module';
 import {MatCardModule} from '@angular/material/card';
 import {LoginModule} from './login/login.module';
+import { CargaDetalheComponent } from './carga-detalhe/carga-detalhe.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CargaDetalheComponent
   ],
   imports: [
     BrowserModule,

@@ -9,12 +9,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {NgxMaskModule} from 'ngx-mask';
+import { MotoristaDetalheComponent } from './motorista-detalhe/motorista-detalhe.component';
 
 
 
 @NgModule({
   declarations: [
-    MotoristaComponent
+    MotoristaComponent,
+    MotoristaDetalheComponent
   ],
   imports: [
     CommonModule,

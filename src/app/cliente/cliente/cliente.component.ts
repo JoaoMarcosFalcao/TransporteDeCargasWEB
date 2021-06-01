@@ -28,25 +28,24 @@ export class ClienteComponent implements OnInit {
     idEndereco: 1,
     versao: 1
   };
-
   clientes: ClienteDto[];
 
   dataSource;
 
   ngOnInit(): void {
     this.clienteService.listarClientes().subscribe(dados => {
-          this.clientes = dados;
-          this.dataSource = this.clientes;
+      this.clientes = dados;
+      this.dataSource = this.clientes;
     });
   }
 
   salvar(): void {
-   this.clienteService.salvarCliente(this.cliente).subscribe((dados) => {
-        this.clienteService.showMessage('Cliente Salvo com sucesso!', false);
-        this.clientes.push(dados);
-        this.dataSource = this.clientes;
-        location.reload();
-   });
+    this.clienteService.salvarCliente(this.cliente).subscribe((dados) => {
+      this.clienteService.showMessage('Cliente Salvo com sucesso!', false);
+      this.clientes.push(dados);
+      this.dataSource = this.clientes;
+      location.reload();
+    });
   }
   editarCliente(cliente: ClienteDto): void {
     this.router.navigate(['/cliente-detalhe', cliente.id]);
@@ -56,3 +55,4 @@ export class ClienteComponent implements OnInit {
     this.clienteService.deletarCliente(cliente.id);
   }
 }
+

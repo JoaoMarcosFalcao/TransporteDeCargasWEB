@@ -1,1 +1,69 @@
-<p>endereco works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Listagem de Endereços
+    </h1>
+  </div>
+
+  <br>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- id Column -->
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.id}} </td>
+      </ng-container>
+
+      <!-- Rua Column -->
+      <ng-container matColumnDef="rua">
+        <th mat-header-cell *matHeaderCellDef> RUA </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.rua}} </td>
+      </ng-container>
+
+      <!-- Numero Column -->
+      <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef> NUMERO </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.numero}} </td>
+      </ng-container>
+
+      <!-- Bairro Column -->
+      <ng-container matColumnDef="bairro">
+        <th mat-header-cell *matHeaderCellDef> BAIRRO </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.bairro}} </td>
+      </ng-container>
+
+      <!-- Cidade Column -->
+      <ng-container matColumnDef="cidade">
+        <th mat-header-cell *matHeaderCellDef> CIDADE </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.cidade}} </td>
+      </ng-container>
+
+      <!-- Estado Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> ESTADO </th>
+        <td mat-cell *matCellDef="let endereco"> {{endereco.estado}} </td>
+      </ng-container>
+
+
+      <!-- Ações -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="let endereco">
+          <div>
+            <button mat-button color="primary" (click)="editarEndereco(endereco)">Editar</button>
+            <button mat-button color="warn" (click)="deletarEndereco(endereco)">Excluir</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <hr>
+    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>
