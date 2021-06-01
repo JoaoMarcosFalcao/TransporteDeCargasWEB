@@ -21,10 +21,28 @@
         <td mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
       </ng-container>
 
-      <!-- Nome Column -->
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.email}} </td>
+      </ng-container>
+
+      <!-- CPF Column -->
       <ng-container matColumnDef="cpf">
         <th mat-header-cell *matHeaderCellDef> CPF </th>
         <td mat-cell *matCellDef="let cliente"> {{cliente.cpf}} </td>
+      </ng-container>
+
+      <!-- IdTelefone Column -->
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> IDTELEFONE </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.idtelefone}} </td>
+      </ng-container>
+
+      <!-- IdEndereco Column -->
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> IDENDERECO </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.idendereco}} </td>
       </ng-container>
 
       <!-- Ações -->

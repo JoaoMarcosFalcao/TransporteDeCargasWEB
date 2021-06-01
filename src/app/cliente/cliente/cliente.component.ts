@@ -17,19 +17,17 @@ export class ClienteComponent implements OnInit {
     private router: Router
   ) { }
 
-  displayedColumns: string[] = ['id', 'nome', 'cpf', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'idTelefone', 'idEndereco', 'acoes'];
 
   cliente: ClienteDto = {
-    id: 0,
-    nome: 'ClienteService Angular',
-    cpf: '01446294102',
-    primeiroNome: 'ClienteService',
-    dataNascimento: new Date(2001, 1, 1),
+    id: 1,
+    nome: 'Paulo',
+    email: 'paulo@hotmail.com',
+    cpf: '058.987.465-82',
+    idTelefone: '1',
+    idEndereco: '1',
     versao: 1
   };
-  //   {id: 2, nome: 'Cliente 2', cpf: '222.222.222-22', primeiroNome: 'Cliente 2', dataNascimento: new Date(2002,2,2), versao: 1 },
-  //   {id: 3, nome: 'Cliente 3', cpf: '333.333.333-33', primeiroNome: 'Cliente 3', dataNascimento: new Date(2003,3,3), versao: 1 }
-  // ];
 
   clientes: ClienteDto[];
 
