@@ -24,8 +24,8 @@ export class ClienteComponent implements OnInit {
     nome: 'Paulo',
     email: 'paulo@hotmail.com',
     cpf: '058.987.465-82',
-    idTelefone: '1',
-    idEndereco: '1',
+    idTelefone: 1,
+    idEndereco: 1,
     versao: 1
   };
 

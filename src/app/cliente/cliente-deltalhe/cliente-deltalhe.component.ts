@@ -63,9 +63,10 @@ export class ClienteDeltalheComponent implements OnInit, ErrorStateMatcher {
             this.formCliente = this.fb.group({     // {5}
               id: [this.cliente.id],
               nome: [this.cliente.nome, [Validators.required, Validators.minLength(3)]],
+              email: [this.cliente.email, Validators.required],
               cpf: [this.cliente.cpf, Validators.required],
-              primeiroNome: [this.cliente.primeiroNome, [ Validators.required ]],
-              dataNascimento: [this.cliente.dataNascimento]
+              idTelefone: [this.cliente.idTelefone, [ Validators.required ]],
+              idEndereco: [this.cliente.idEndereco]
             });
             console.log(this.formCliente);
           }, error => {console.error(error); });
@@ -73,17 +74,19 @@ export class ClienteDeltalheComponent implements OnInit, ErrorStateMatcher {
           this.cliente = {
             id: null,
             nome: '',
+            email: '',
             cpf: '',
-            dataNascimento: null,
-            primeiroNome: '',
+            idTelefone: null,
+            idEndereco: null,
             versao: null
           };
           this.formCliente = this.fb.group({     // {5}
             id: [this.cliente.id],
             nome: [this.cliente.nome, Validators.required],
+            email: [this.cliente.email, Validators.required],
             cpf: [this.cliente.cpf, Validators.required],
-            primeiroNome: [this.cliente.primeiroNome, [ Validators.required ]],
-            dataNascimento: [this.cliente.dataNascimento]
+            idTelefone: [this.cliente.idTelefone, [ Validators.required ]],
+            idEndereco: [this.cliente.idEndereco]
           });
         }
       });
