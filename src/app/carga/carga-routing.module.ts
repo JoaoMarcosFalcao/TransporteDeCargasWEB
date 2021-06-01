@@ -8,8 +8,8 @@ const cargaRoutes: Routes = [
   {path: 'cliente', component: CargaComponent, canActivate: [AuthGuard]},
   {path: 'cliente-detalhe', component: CargaDetalheComponent, canActivate: [AuthGuard]},
   {path: 'cliente-detalhe/:id', component: CargaDetalheComponent, canActivate: [AuthGuard]}
+];
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class CargaRoutingModule { }
