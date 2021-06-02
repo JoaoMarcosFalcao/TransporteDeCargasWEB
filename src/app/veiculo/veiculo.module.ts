@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VeiculoComponent } from './veiculo/veiculo.component';
-import { VeiculoDetalheComponent } from './veiculo-detalhe/veiculo-detalhe.component';
 
+import { VeiculoRoutingModule } from './veiculo-routing.module';
 
 
 @NgModule({
-  declarations: [
-    VeiculoComponent,
-    VeiculoDetalheComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    VeiculoRoutingModule
   ]
 })
 export class VeiculoModule { }

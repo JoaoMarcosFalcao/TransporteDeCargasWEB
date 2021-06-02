@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TelefoneComponent } from './telefone/telefone.component';
-import { TelefoneDetalheComponent } from './telefone-detalhe/telefone-detalhe.component';
 
+import { TelefoneRoutingModule } from './telefone-routing.module';
 
 
 @NgModule({
-  declarations: [
-    TelefoneComponent,
-    TelefoneDetalheComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    TelefoneRoutingModule
   ]
 })
 export class TelefoneModule { }

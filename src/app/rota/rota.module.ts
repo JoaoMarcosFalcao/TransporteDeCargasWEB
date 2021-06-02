@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RotaComponent } from './rota/rota.component';
-import { RotaDetalheComponent } from './rota-detalhe/rota-detalhe.component';
 
+import { RotaRoutingModule } from './rota-routing.module';
 
 
 @NgModule({
-  declarations: [
-    RotaComponent,
-    RotaDetalheComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    RotaRoutingModule
   ]
 })
 export class RotaModule { }

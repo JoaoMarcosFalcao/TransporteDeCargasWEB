@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViagemComponent } from './viagem/viagem.component';
-import { ViagemDetalheComponent } from './viagem-detalhe/viagem-detalhe.component';
 
+import { ViagemRoutingModule } from './viagem-routing.module';
 
 
 @NgModule({
-  declarations: [
-    ViagemComponent,
-    ViagemDetalheComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ViagemRoutingModule
   ]
 })
 export class ViagemModule { }
