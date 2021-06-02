@@ -18,7 +18,7 @@
             <input type="text" matInput placeholder="Ex. Rua B" formControlName="rua"
                    [errorStateMatcher]="matcher"
                    required>
-            <mat-error *ngIf="getControl.nome.hasError('rua') && !getControl.rua.hasError('required')">
+            <mat-error *ngIf="getControl.nome.hasError('rua') && !getControl.nome.hasError('required')">
              Digite uma rua valida!
             </mat-error>
           </mat-form-field>
@@ -30,6 +30,16 @@
                    required>
             <mat-error *ngIf="getControl.nome.hasError('numero') && !getControl.numero.hasError('required')">
               Digite o numero da casa valido!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Complemento</mat-label>
+            <input type="text" matInput placeholder="Ex. Perto da Praça" formControlName="complemento"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.complemento.hasError('complemento') && !getControl.complemento.hasError('required')">
+              Digite um  complemento valido!
             </mat-error>
           </mat-form-field>
 
@@ -66,7 +76,6 @@
           <hr>
 
           <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
-
 
         </form>
       </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {EnderecoDto} from '../../model/Endereco-dto';
+import {EnderecoDto} from '../../model/endereco-dto';
 import {EMPTY, Observable, Subscription} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
@@ -14,7 +14,9 @@ export class EnderecoService {
   constructor(
     private httpEndereco: HttpClient,
     private snackbar: MatSnackBar
-  ) { }
+  ) {
+
+  }
 
   enderecos: EnderecoDto[];
 
@@ -55,19 +57,22 @@ export class EnderecoService {
   }
 
   buscarEnderecosPorId(id: number): Observable<EnderecoDto> {
-    const url = `${environment.config.URL_API}/endereco/` ;
+    const url = `${environment.config.URL_API}/endereco/`;
     return this.httpEndereco.get<EnderecoDto>(url + id).pipe(
       map((endereco) => endereco),
-      catchError( (e) => this.errorHandler(e))
+      catchError((e) => this.errorHandler(e))
     );
   }
 
   deletarEndereco(id: number): void {
-    const url = `${environment.config.URL_API}/endereco/delete/` ;
-    this.httpEndereco.delete<EnderecoDto>(url + id).pipe(
-      map((endereco) => endereco),
-      catchError( (e) => this.errorHandler(e))
-    );
+    const url = `${environment.config.URL_API}/endereco/delete/${id}`;
+    this.httpEndereco.delete(url).subscribe({
+      next: data => {
+        this.showMessage('Deletado com sucesso', false);
+      },
+      error: error => {
+        catchError(e => this.errorHandler(e));
+      },
+    });
   }
-
 }

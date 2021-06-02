@@ -16,16 +16,14 @@ export class ClienteComponent implements OnInit {
     private location: Location,
     private router: Router
   ) { }
-  displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'idTelefone', 'idEndereco', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'endereco_id', 'acoes'];
 
   cliente: ClienteDto = {
     id: 1,
     nome: 'Paulo',
     email: 'paulo@hotmail.com',
     cpf: '058.987.465-82',
-    idTelefone: 1,
-    idEndereco: 1,
-    versao: 1
+    endereco_id: 1,
   };
   clientes: ClienteDto[];
 

@@ -11,6 +11,7 @@ import {NgxMaskModule} from 'ngx-mask';
 import {EnderecoRoutingModule } from './endereco-routing.module';
 import { EnderecoComponent } from './endereco/endereco.component';
 import { EnderecoDetalheComponent } from './endereco-detalhe/endereco-detalhe.component';
+import {EnderecoService} from './endereco.service';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { EnderecoDetalheComponent } from './endereco-detalhe/endereco-detalhe.co
     MatInputModule,
     FormsModule,
     NgxMaskModule,
-    EnderecoRoutingModule,
+    EnderecoRoutingModule
+  ], providers:[
+    EnderecoService
   ]
 })
 export class EnderecoModule { }

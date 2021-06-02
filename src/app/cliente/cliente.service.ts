@@ -14,60 +14,66 @@ export class ClienteService {
   constructor(
     private httpCliente: HttpClient,
     private snackbar: MatSnackBar
-  ) { }
+  ) {
+  }
 
-    clientes: ClienteDto[];
+  clientes: ClienteDto[];
 
-   listarClientes(): Observable<ClienteDto[]> {
-     const url = `${environment.config.URL_API}/cliente/listar` ;
-     return this.httpCliente.get<ClienteDto[]>(url).pipe(
-       map((clientes) => clientes)
-     );
-   }
-   salvarCliente(cliente: ClienteDto): Observable<ClienteDto>{
-     const url = `${environment.config.URL_API}/cliente/add` ;
-     return this.httpCliente.post<ClienteDto>(url, cliente).pipe(
-          map(obj => obj),
-          catchError( (e) => this.errorHandler(e))
-        );
-   }
-
-  editarCliente(cliente: ClienteDto): Observable<ClienteDto>{
-    const url = `${environment.config.URL_API}/cliente/edit` ;
-    return this.httpCliente.put<ClienteDto>(url, cliente).pipe(
-      map(obj => obj),
-      catchError( (e) => this.errorHandler(e))
+  listarClientes(): Observable<ClienteDto[]> {
+    const url = `${environment.config.URL_API}/cliente/`;
+    return this.httpCliente.get<ClienteDto[]>(url).pipe(
+      map((clientes) => clientes)
     );
   }
 
-   errorHandler(e: any): Observable<any>{
-      this.showMessage('Ocorreu um erro!', true );
-      return EMPTY;
-   }
+  salvarCliente(cliente: ClienteDto): Observable<ClienteDto> {
+    const url = `${environment.config.URL_API}/cliente/add`;
+    return this.httpCliente.post<ClienteDto>(url, cliente).pipe(
+      map(obj => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
 
-   showMessage(msg: string, isError: boolean = false): void{
-      this.snackbar.open(msg, 'X', {
-        duration: 2000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: isError ? ['msg-error'] : ['msg-success'],
-      });
-   }
+  editarCliente(cliente: ClienteDto): Observable<ClienteDto> {
+    const url = `${environment.config.URL_API}/cliente/edit`;
+    return this.httpCliente.put<ClienteDto>(url, cliente).pipe(
+      map(obj => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro!', true);
+    return EMPTY;
+  }
+
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackbar.open(msg, 'X', {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: isError ? ['msg-error'] : ['msg-success'],
+    });
+  }
 
   bucarClientesPorId(id: number): Observable<ClienteDto> {
-    const url = `${environment.config.URL_API}/cliente/` ;
+    const url = `${environment.config.URL_API}/cliente/`;
     return this.httpCliente.get<ClienteDto>(url + id).pipe(
       map((cliente) => cliente),
-      catchError( (e) => this.errorHandler(e))
+      catchError((e) => this.errorHandler(e))
     );
   }
 
   deletarCliente(id: number): void {
-    const url = `${environment.config.URL_API}/cliente/delete/` ;
-    this.httpCliente.delete<ClienteDto>(url + id).pipe(
-      map((cliente) => cliente),
-      catchError( (e) => this.errorHandler(e))
-    );
+    const url = `${environment.config.URL_API}/cliente/delete/${id}`;
+    this.httpCliente.delete(url).subscribe({
+      next: data => {
+        this.showMessage('Deletado com sucesso', false);
+      },
+      error: error => {
+        catchError(e => this.errorHandler(e));
+      },
+    });
   }
-
 }
+

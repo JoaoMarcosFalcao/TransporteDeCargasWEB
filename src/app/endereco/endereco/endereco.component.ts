@@ -4,7 +4,6 @@ import {EnderecoService } from '../endereco.service';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-endereco',
   templateUrl: './endereco.component.html',
@@ -12,15 +11,14 @@ import {Router} from '@angular/router';
 })
 export class EnderecoComponent implements OnInit {
 
-   constructor(
-  private enderecoService: EnderecoService,
-  private location: Location,
-  private router: Router
+  constructor(
+    private enderecoService: EnderecoService,
+    private location: Location,
+    private router: Router
 ) { }
   displayedColumns: string[] = ['id', 'rua', 'complemento','numero', 'bairro', 'cidade', 'estado', 'acoes'];
 
   endereco: EnderecoDto = {
-
     id: 1,
     rua: 'Rua B',
     numero: '17',
@@ -29,7 +27,6 @@ export class EnderecoComponent implements OnInit {
     cidade: 'Barra do Garcas',
     estado: 'Mato Grosso',
   };
-
   enderecos: EnderecoDto[];
 
   dataSource;
@@ -49,12 +46,12 @@ export class EnderecoComponent implements OnInit {
       location.reload();
     });
   }
-  editarEndereco(Endereco: EnderecoDto): void {
-    this.router.navigate(['/endereco-detalhe', Endereco.id]);
+  editarEndereco(endereco: EnderecoDto): void {
+    this.router.navigate(['/endereco-detalhe', endereco.id]);
   }
 
-  deletarEndereco(Endereco: EnderecoDto): void {
-    this.enderecoService.deletarEndereco(Endereco.id);
+  deletarEndereco(endereco: EnderecoDto): void {
+    this.enderecoService.deletarEndereco(endereco.id);
   }
 }
 

@@ -3,7 +3,5 @@ export class ClienteDto {
   nome: string;
   email: string;
   cpf: string;
-  idTelefone: number;
-  idEndereco: number;
-  versao: number;
+  endereco_id: number;
 }

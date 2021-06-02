@@ -11,6 +11,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {NgxMaskModule} from 'ngx-mask';
 import {ClienteRoutingModule} from './cliente-routing.module';
+import {ClienteService} from './cliente.service';
 
 
 
@@ -35,6 +36,8 @@ import {ClienteRoutingModule} from './cliente-routing.module';
     FormsModule,
     NgxMaskModule,
     ClienteRoutingModule
+  ], providers:[
+    ClienteService
   ]
 })
 export class ClienteModule { }

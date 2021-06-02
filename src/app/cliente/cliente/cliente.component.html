@@ -9,7 +9,7 @@
 
   <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- id Column -->
+      <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
@@ -23,7 +23,7 @@
 
       <!-- Email Column -->
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <th mat-header-cell *matHeaderCellDef> EMAIL </th>
         <td mat-cell *matCellDef="let cliente"> {{cliente.email}} </td>
       </ng-container>
 
@@ -33,16 +33,10 @@
         <td mat-cell *matCellDef="let cliente"> {{cliente.cpf}} </td>
       </ng-container>
 
-      <!-- IdTelefone Column -->
-      <ng-container matColumnDef="cpf">
-        <th mat-header-cell *matHeaderCellDef> IDTELEFONE </th>
-        <td mat-cell *matCellDef="let cliente"> {{cliente.idtelefone}} </td>
-      </ng-container>
-
       <!-- IdEndereco Column -->
-      <ng-container matColumnDef="cpf">
-        <th mat-header-cell *matHeaderCellDef> IDENDERECO </th>
-        <td mat-cell *matCellDef="let cliente"> {{cliente.idendereco}} </td>
+      <ng-container matColumnDef="endereco_id">
+        <th mat-header-cell *matHeaderCellDef> ID ENDERECO </th>
+        <td mat-cell *matCellDef="let cliente"> {{cliente.endereco_id}} </td>
       </ng-container>
 
       <!-- Ações -->

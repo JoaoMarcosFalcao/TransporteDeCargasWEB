@@ -35,7 +35,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
   ],
 })
-export class EnderecoDetalheComponent implements OnInit {
+export class EnderecoDetalheComponent implements OnInit, ErrorStateMatcher {
 
   constructor(private enderecoService: EnderecoService,
               private fb: FormBuilder,
@@ -61,12 +61,12 @@ export class EnderecoDetalheComponent implements OnInit {
             this.endereco = dados;
             this.formEndereco = this.fb.group({     // {5}
               id: [this.endereco.id],
-              rua: [this.endereco.rua, [Validators.required, Validators.required]],
+              rua: [this.endereco.rua, Validators.required],
               numero: [this.endereco.numero, Validators.required],
               complemento: [this.endereco.complemento, Validators.required],
               bairro: [this.endereco.bairro, Validators.required],
-              cidade: [this.endereco.cidade, [ Validators.required ]],
-              estado: [this.endereco.estado]
+              cidade: [this.endereco.cidade, Validators.required],
+              estado: [this.endereco.estado,  Validators.required]
             });
             console.log(this.formEndereco);
           }, error => {console.error(error); });
@@ -78,21 +78,20 @@ export class EnderecoDetalheComponent implements OnInit {
             numero: '',
             bairro: '',
             cidade: '',
-            estado: ''
+            estado: '',
           };
           this.formEndereco = this.fb.group({     // {5}
             id: [this.endereco.id],
-            rua: [this.endereco.rua, [Validators.required, Validators.required]],
-            complemento: [this.endereco.complemento, Validators.required],
+            rua: [this.endereco.rua, Validators.required],
             numero: [this.endereco.numero, Validators.required],
+            complemento: [this.endereco.complemento, Validators.required],
             bairro: [this.endereco.bairro, Validators.required],
-            cidade: [this.endereco.cidade, [ Validators.required ]],
-            estado: [this.endereco.estado]
+            cidade: [this.endereco.cidade, Validators.required],
+            estado: [this.endereco.estado,  Validators.required]
           });
         }
       });
   }
-
   onSubmit(): void {
     this.endereco = this.formEndereco.value;
     if (this.endereco.id === null){

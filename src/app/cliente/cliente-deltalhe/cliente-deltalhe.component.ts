@@ -62,11 +62,10 @@ export class ClienteDeltalheComponent implements OnInit, ErrorStateMatcher {
             this.cliente = dados;
             this.formCliente = this.fb.group({     // {5}
               id: [this.cliente.id],
-              nome: [this.cliente.nome, [Validators.required, Validators.minLength(3)]],
+              nome: [this.cliente.nome, Validators.required],
               email: [this.cliente.email, Validators.required],
               cpf: [this.cliente.cpf, Validators.required],
-              idTelefone: [this.cliente.idTelefone, [ Validators.required ]],
-              idEndereco: [this.cliente.idEndereco]
+              endereco_id: [this.cliente.endereco_id]
             });
             console.log(this.formCliente);
           }, error => {console.error(error); });
@@ -76,17 +75,14 @@ export class ClienteDeltalheComponent implements OnInit, ErrorStateMatcher {
             nome: '',
             email: '',
             cpf: '',
-            idTelefone: null,
-            idEndereco: null,
-            versao: null
+            endereco_id: null,
           };
           this.formCliente = this.fb.group({     // {5}
             id: [this.cliente.id],
             nome: [this.cliente.nome, Validators.required],
             email: [this.cliente.email, Validators.required],
             cpf: [this.cliente.cpf, Validators.required],
-            idTelefone: [this.cliente.idTelefone, [ Validators.required ]],
-            idEndereco: [this.cliente.idEndereco]
+            endereco_id: [this.cliente.endereco_id]
           });
         }
       });
