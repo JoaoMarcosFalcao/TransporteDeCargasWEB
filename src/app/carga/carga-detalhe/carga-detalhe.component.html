@@ -1,1 +1,86 @@
-<p>carga-detalhe works!</p>
+<div class="card">
+  <div class="card-header">
+    Manutenção das Cargas:
+  </div>
+  <div class="card-body">
+    <div class="card-container">
+      <div>
+        <form [formGroup]="formCarga" (ngSubmit)="onSubmit"  class="form-exemplo">
+          <div style="display: none">
+            <mat-form-field class="example-full-width">
+              <mat-label>ID</mat-label>
+              <input matInput  formControlName="id">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Peso</mat-label>
+            <input type="text" matInput placeholder="Ex. 200 KG" formControlName="peso"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.peso.hasError('peso') && !getControl.peso.hasError('required')">
+              Digite um Peso valido!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Altura</mat-label>
+            <input type="text" matInput placeholder="Ex: 1.5 Metros"  required  formControlName="altura"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.altura.hasError('altura') && !getControl.altura.hasError('required')">
+              Digite uma Altura valida!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Comprimento</mat-label>
+            <input type="text" matInput placeholder="Ex: 2.5 Metros" required formControlName="comprimento"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.comprimento.hasError('comprimento') && !getControl.comprimento.hasError('required')">
+              Digite um Comprimento valido!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Largura</mat-label>
+            <input type="text" matInput placeholder="Ex: 2.3 Metros"  required formControlName="largura"
+                   [errorStateMatcher]="matcher">
+            <mat-error *ngIf="getControl.largura.hasError('largura') && !getControl.largura.hasError('required')">
+              Digite uma Largura valida!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>PesoOcupado</mat-label>
+            <input type="text" matInput placeholder="Ex: 590 KG"  required formControlName="pesoOcupado"
+                   [errorStateMatcher]="matcher">
+            <mat-error *ngIf="getControl.pesoOcupado.hasError('pesoOcupado') && !getControl.pesoOcupado.hasError('required')">
+              Digite uma Largura valida!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>TipoCarga</mat-label>
+            <input type="text" matInput placeholder="Ex: Frágil ou Não Frágil"  required formControlName="tipoCarga"
+                   [errorStateMatcher]="matcher">
+            <mat-error *ngIf="getControl.tipoCarga.hasError('tipoCarga') && !getControl.tipoCarga.hasError('required')">
+              Digite um Tipo de Carga valido!
+            </mat-error>
+          </mat-form-field>
+
+          <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

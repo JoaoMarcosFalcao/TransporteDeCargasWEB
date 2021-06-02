@@ -5,5 +5,5 @@ export class CargaDto {
   comprimento: number;
   largura: number;
   pesoOcupado: number;
-  tipoCarta: string;
+  tipoCarga: string;
 }

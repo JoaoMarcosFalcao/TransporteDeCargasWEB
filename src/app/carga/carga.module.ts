@@ -8,14 +8,24 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {NgxMaskModule} from 'ngx-mask';
-import { CargaRoutingModule } from './carga-routing.module';
+import {CargaRoutingModule} from './carga-routing.module';
+import {CargaService} from './carga.service';
+import {CargaComponent} from './carga/carga/carga.component';
+import {CargaDetalheComponent} from './carga-detalhe/carga-detalhe.component';
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CargaComponent,
+    CargaDetalheComponent
+  ],
+  exports: [
+    CargaComponent,
+    CargaDetalheComponent
+  ],
   imports: [
     CommonModule,
-    CargaRoutingModule,
     MatTableModule,
     MatButtonModule,
     ReactiveFormsModule,
@@ -25,6 +35,9 @@ import { CargaRoutingModule } from './carga-routing.module';
     MatInputModule,
     FormsModule,
     NgxMaskModule,
+    CargaRoutingModule
+  ], providers:[
+    CargaService
   ]
 })
 export class CargaModule { }
