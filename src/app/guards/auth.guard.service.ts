@@ -10,7 +10,6 @@ import {UserDto} from '../../model/User-dto';
 export class AuthGuardService {
   private loggedIn = new BehaviorSubject<boolean>(false);
 
-  // tslint:disable-next-line:typedef
   get isLoggedIn() {
     return this.loggedIn.asObservable();
   }

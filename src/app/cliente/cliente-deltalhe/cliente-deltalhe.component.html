@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-      Manutenção dos Clientes:
+    Manutenção dos Clientes:
   </div>
   <div class="card-body">
     <div class="card-container">
@@ -27,8 +27,8 @@
             <mat-label>CPF</mat-label>
             <input type="text" matInput placeholder="Ex: 999.999.999-99"
                    mask="000.000.000-99" required  formControlName="cpf"
-            [errorStateMatcher]="matcher"
-            required>
+                   [errorStateMatcher]="matcher"
+                   required>
             <mat-error *ngIf="getControl.cpf.hasError('cpf') && !getControl.cpf.hasError('required')">
               Digite um cpf valido!
             </mat-error>

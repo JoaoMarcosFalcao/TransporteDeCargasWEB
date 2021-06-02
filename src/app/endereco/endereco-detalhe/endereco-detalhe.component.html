@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    Manutenção dos Endereços:
+    Manutenção dos Enderecos:
   </div>
   <div class="card-body">
     <div class="card-container">
@@ -15,57 +15,57 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Rua</mat-label>
-            <input type="text" matInput placeholder="Ex. Rua B" formControlName="rua"
+            <input type="text" matInput placeholder="Ex. Rua X" formControlName="rua"
                    [errorStateMatcher]="matcher"
                    required>
-            <mat-error *ngIf="getControl.nome.hasError('rua') && !getControl.nome.hasError('required')">
-             Digite uma rua valida!
+            <mat-error *ngIf="getControl.rua.hasError('rua') && !getControl.rua.hasError('required')">
+              Digite uma Rua valida!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Numero</mat-label>
-            <input type="text" matInput placeholder="Ex. 17" formControlName="numero"
+            <input type="text" matInput placeholder="Ex. 800" formControlName="numero"
                    [errorStateMatcher]="matcher"
                    required>
-            <mat-error *ngIf="getControl.nome.hasError('numero') && !getControl.numero.hasError('required')">
-              Digite o numero da casa valido!
+            <mat-error *ngIf="getControl.numero.hasError('numero') && !getControl.numero.hasError('required')">
+              Digite uma Rua valida!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Complemento</mat-label>
-            <input type="text" matInput placeholder="Ex. Perto da Praça" formControlName="complemento"
+            <input type="text" matInput placeholder="Ex: Perto da Loja de Roupa"  formControlName="complemento"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.complemento.hasError('complemento') && !getControl.complemento.hasError('required')">
-              Digite um  complemento valido!
+              Digite um Complemento valido!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Bairro</mat-label>
-            <input type="text" matInput placeholder="Ex. Serra Alta" formControlName="bairro"
+            <input type="text" matInput placeholder="Ex: Serra Azul"  formControlName="bairro"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.bairro.hasError('bairro') && !getControl.bairro.hasError('required')">
-              Digite um bairro valido!
+              Digite um Bairro valido!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Cidade</mat-label>
-            <input type="text" matInput placeholder="Ex. Barra do Garças" formControlName="cidade"
+            <input type="text" matInput placeholder="Ex: Lagoinha"  formControlName="cidade"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.cidade.hasError('cidade') && !getControl.cidade.hasError('required')">
-              Digite uma cidade valida!
+              Digite uma Cidade valida!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Estado</mat-label>
-            <input type="text" matInput placeholder="Ex. Mato Grosso" formControlName="estado"
+            <input type="text" matInput placeholder="Ex: Mato Grosso"  formControlName="estado"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.estado.hasError('estado') && !getControl.estado.hasError('required')">
@@ -77,6 +77,7 @@
 
           <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
 
+
         </form>
       </div>
 
@@ -85,4 +86,3 @@
   </div>
 
 </div>
-
