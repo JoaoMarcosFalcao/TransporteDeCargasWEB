@@ -4,9 +4,7 @@ export class ViagemDto {
   horaChegada: string;
   dataSaida: Date;
   dataChegada: Date;
-  idCarga: number;
-  idVeiculo: number;
-  idMotorista: number;
-  idRota: number;
+  veiculo: number;
+  motorista: number;
   frete: number;
 }

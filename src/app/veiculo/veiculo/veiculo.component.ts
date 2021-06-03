@@ -17,7 +17,7 @@ export class VeiculoComponent implements OnInit {
     private location: Location,
     private router: Router
   ) { }
-  displayedColumns: string[] = ['id', 'modelo', 'marca', 'ano', 'placa', 'RENAVAM', 'capacidade'];
+  displayedColumns: string[] = ['id', 'modelo', 'marca', 'ano', 'placa', 'RENAVAM', 'capacidade', 'acoes'];
 
   veiculo: VeiculoDto = {
     id: 1,

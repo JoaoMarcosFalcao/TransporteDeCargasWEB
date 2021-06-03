@@ -20,6 +20,8 @@ import { MotoristaRoutingModule } from './motorista/motorista-routing.module';
 import { MotoristaModule } from './motorista/motorista.module';
 import { TelefoneRoutingModule } from './telefone/telefone-routing.module';
 import { TelefoneModule } from './telefone/telefone.module';
+import { VeiculoModule } from './veiculo/veiculo.module';
+import { VeiculoRoutingModule } from './veiculo/veiculo-routing.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -35,6 +37,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MotoristaModule,
     EnderecoModule,
     CargaModule,
+    VeiculoModule,
     TelefoneModule,
     HttpClientModule,
     MatSnackBarModule,
@@ -46,6 +49,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MotoristaRoutingModule,
     CargaRoutingModule,
     TelefoneRoutingModule,
+    VeiculoRoutingModule,
     LoginModule
   ],
   providers: [],

@@ -1,1 +1,79 @@
-<p>viagem works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Listagem das Viagens
+    </h1>
+  </div>
+
+  <br>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.id}} </td>
+      </ng-container>
+
+      <!-- HoraPartida Column -->
+      <ng-container matColumnDef="horaPartida">
+        <th mat-header-cell *matHeaderCellDef> Hora Partida</th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.horaPartida}} </td>
+      </ng-container>
+
+      <!-- HoraChegada Column -->
+      <ng-container matColumnDef="horaChegada">
+        <th mat-header-cell *matHeaderCellDef> Hora Chegada </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.horaChegada}} </td>
+      </ng-container>
+
+      <!-- Data Saida -->
+      <ng-container matColumnDef="dataSaida">
+        <th mat-header-cell *matHeaderCellDef> Data Saida </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.dataSaida}} </td>
+      </ng-container>
+
+      <!-- Data Chegada -->
+      <ng-container matColumnDef="dataSaida">
+        <th mat-header-cell *matHeaderCellDef> Data Chegada </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.dataChegada}} </td>
+      </ng-container>
+
+      <!-- Veiculo -->
+      <ng-container matColumnDef="veiculo">
+        <th mat-header-cell *matHeaderCellDef> Veiculo </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.veiculo}} </td>
+      </ng-container>
+
+      <!-- Motorista Column -->
+      <ng-container matColumnDef="motorista">
+        <th mat-header-cell *matHeaderCellDef> Motorista </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.motorista}} </td>
+      </ng-container>
+
+      <!-- Freet Column -->
+      <ng-container matColumnDef="frete">
+        <th mat-header-cell *matHeaderCellDef> Frete </th>
+        <td mat-cell *matCellDef="letviagem"> {{viagem.frete}} </td>
+      </ng-container>
+
+      <!-- Ações -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="letviagem">
+          <div>
+            <button mat-button color="primary" (click)="editarViagem(viagem)">Editar</button>
+            <button mat-button color="warn" (click)="deletarViagem(viagem)">Excluir</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <hr>
+    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>
