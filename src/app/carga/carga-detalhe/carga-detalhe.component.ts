@@ -58,7 +58,7 @@ export class CargaDetalheComponent implements OnInit, ErrorStateMatcher {
       (params: Params) => {
         const id: number = +params.id;
         if (id) {
-          this.cargaService.bucarCargasPorId(id).subscribe(dados => {
+          this.cargaService.buscarCargasPorId(id).subscribe(dados => {
             this.carga = dados;
             this.formCarga = this.fb.group({     // {5}
               id: [this.carga.id],
@@ -66,7 +66,7 @@ export class CargaDetalheComponent implements OnInit, ErrorStateMatcher {
               altura: [this.carga.altura, Validators.required],
               comprimento: [this.carga.comprimento, Validators.required],
               largura: [this.carga.largura, Validators.required],
-              pesoOcupado: [this.carga.pesoOcupado, Validators.required],
+              pesoCubado: [this.carga.pesoCubado, Validators.required],
               tipoCarga: [this.carga.tipoCarga, Validators.required]
             });
             console.log(this.formCarga);
@@ -78,7 +78,7 @@ export class CargaDetalheComponent implements OnInit, ErrorStateMatcher {
             altura: null,
             comprimento: null,
             largura: null,
-            pesoOcupado: null,
+            pesoCubado: null,
             tipoCarga: '',
           };
           this.formCarga = this.fb.group({     // {5}
@@ -87,7 +87,7 @@ export class CargaDetalheComponent implements OnInit, ErrorStateMatcher {
             altura: [this.carga.altura, Validators.required],
             comprimento: [this.carga.comprimento, Validators.required],
             largura: [this.carga.largura, Validators.required],
-            pesoOcupado: [this.carga.pesoOcupado, Validators.required],
+            pesoCubado: [this.carga.pesoCubado, Validators.required],
             tipoCarga: [this.carga.tipoCarga, Validators.required]
           });
         }

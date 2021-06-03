@@ -1,1 +1,73 @@
-<p>veiculo works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Listagem das Veiculos
+    </h1>
+  </div>
+
+  <br>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.id}} </td>
+      </ng-container>
+
+      <!-- Modelo Column -->
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef> Modelo</th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.modelo}} </td>
+      </ng-container>
+
+      <!-- Marca Column -->
+      <ng-container matColumnDef="marca">
+        <th mat-header-cell *matHeaderCellDef> MARCA </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.marca}} </td>
+      </ng-container>
+
+      <!-- Ano Column -->
+      <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef> ANO </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.ano}} </td>
+      </ng-container>
+
+      <!-- Placa Column -->
+      <ng-container matColumnDef="placa">
+        <th mat-header-cell *matHeaderCellDef> PLACA </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.placa}} </td>
+      </ng-container>
+
+      <!-- RENAVAM Column -->
+      <ng-container matColumnDef="RENAVAM">
+        <th mat-header-cell *matHeaderCellDef> RENAVAM </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.RENAVAM}} </td>
+      </ng-container>
+
+      <!-- Capacidade Column -->
+      <ng-container matColumnDef="capacidade">
+        <th mat-header-cell *matHeaderCellDef> CAPACIDADE </th>
+        <td mat-cell *matCellDef="letveiculo"> {{veiculo.capacidade}} </td>
+      </ng-container>
+
+      <!-- Ações -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="letveiculo">
+          <div>
+            <button mat-button color="primary" (click)="editarVeiculo(veiculo)">Editar</button>
+            <button mat-button color="warn" (click)="deletarVeiculo(veiculo)">Excluir</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <hr>
+    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>

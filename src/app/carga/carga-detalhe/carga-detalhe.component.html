@@ -46,25 +46,28 @@
           <mat-form-field class="example-full-width">
             <mat-label>Largura</mat-label>
             <input type="text" matInput placeholder="Ex: 2.3 Metros"  required formControlName="largura"
-                   [errorStateMatcher]="matcher">
+                   [errorStateMatcher]="matcher"
+                   required>
             <mat-error *ngIf="getControl.largura.hasError('largura') && !getControl.largura.hasError('required')">
               Digite uma Largura valida!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <mat-label>PesoOcupado</mat-label>
-            <input type="text" matInput placeholder="Ex: 590 KG"  required formControlName="pesoOcupado"
-                   [errorStateMatcher]="matcher">
-            <mat-error *ngIf="getControl.pesoOcupado.hasError('pesoOcupado') && !getControl.pesoOcupado.hasError('required')">
-              Digite uma Largura valida!
+            <mat-label>PesoCubado</mat-label>
+            <input type="text" matInput placeholder="Ex: 590 KG"  required formControlName="pesoCubado"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.pesoCubado.hasError('pesoCubado') && !getControl.pesoCubado.hasError('required')">
+              Digite uma Peso Ocupado valida!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>TipoCarga</mat-label>
-            <input type="text" matInput placeholder="Ex: Frágil ou Não Frágil"  required formControlName="tipoCarga"
-                   [errorStateMatcher]="matcher">
+            <input type="text" matInput placeholder="Ex: Escreva dessa forma: fragil ou naoFragil"  required formControlName="tipoCarga"
+                   [errorStateMatcher]="matcher"
+                   required>
             <mat-error *ngIf="getControl.tipoCarga.hasError('tipoCarga') && !getControl.tipoCarga.hasError('required')">
               Digite um Tipo de Carga valido!
             </mat-error>

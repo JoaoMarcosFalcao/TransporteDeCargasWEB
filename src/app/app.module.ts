@@ -14,6 +14,12 @@ import {ClienteRoutingModule} from './cliente/cliente-routing.module';
 import {EnderecoRoutingModule} from './endereco/endereco-routing.module';
 import {MatCardModule} from '@angular/material/card';
 import {LoginModule} from './login/login.module';
+import { CargaModule } from './carga/carga.module';
+import { CargaRoutingModule } from './carga/carga-routing.module';
+import { MotoristaRoutingModule } from './motorista/motorista-routing.module';
+import { MotoristaModule } from './motorista/motorista.module';
+import { TelefoneRoutingModule } from './telefone/telefone-routing.module';
+import { TelefoneModule } from './telefone/telefone.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -26,7 +32,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     BrowserAnimationsModule,
     MatSliderModule,
     ClienteModule,
+    MotoristaModule,
     EnderecoModule,
+    CargaModule,
+    TelefoneModule,
     HttpClientModule,
     MatSnackBarModule,
     NgxMaskModule.forRoot(),
@@ -34,6 +43,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     AppRoutingModule,
     ClienteRoutingModule,
     EnderecoRoutingModule,
+    MotoristaRoutingModule,
+    CargaRoutingModule,
+    TelefoneRoutingModule,
     LoginModule
   ],
   providers: [],

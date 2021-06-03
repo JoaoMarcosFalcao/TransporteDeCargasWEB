@@ -1,1 +1,72 @@
-<p>motorista-detalhe works!</p>
+<div class="card">
+  <div class="card-header">
+    Manutenção das Motoristas:
+  </div>
+  <div class="card-body">
+    <div class="card-container">
+      <div>
+        <form [formGroup]="formMotorista" (ngSubmit)="onSubmit"  class="form-exemplo">
+          <div style="display: none">
+            <mat-form-field class="example-full-width">
+              <mat-label>ID</mat-label>
+              <input matInput  formControlName="id">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput placeholder="Ex. João" formControlName="nome"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.nome.hasError('nome') && !getControl.nome.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="Ex:joao@hotmail.com"  required  formControlName="email"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.email.hasError('email') && !getControl.email.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Endereco</mat-label>
+            <input type="text" matInput placeholder="Ex: Informe o ID de um Endereco já cadastrado" formControlName="endereco"
+                   [errorStateMatcher]="matcher">
+            <mat-error *ngIf="getControl.endereco.hasError('endereco') && !getControl.endereco.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Numero da CNH</mat-label>
+            <input type="text" matInput placeholder="Ex: 789654123658"  required formControlName="cnh"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.cnh.hasError('cnh') && !getControl.cnh.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Validade da CNH</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="validadecnh">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+         <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

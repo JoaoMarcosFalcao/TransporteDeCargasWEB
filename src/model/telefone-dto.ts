@@ -1,6 +1,6 @@
 export class TelefoneDto {
   id: number;
-  codigoAre: number;
+  codigoArea: number;
   DDD: number;
   numero: string;
 }

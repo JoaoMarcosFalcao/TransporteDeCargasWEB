@@ -1,1 +1,55 @@
-<p>telefone works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Listagem das Telefones
+    </h1>
+  </div>
+
+  <br>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="lettelefone"> {{telefone.id}} </td>
+      </ng-container>
+
+      <!-- Codigo de Area Column -->
+      <ng-container matColumnDef="codigoArea">
+        <th mat-header-cell *matHeaderCellDef> CODIGO DE ARE </th>
+        <td mat-cell *matCellDef="lettelefone"> {{telefone.codigoArea}} </td>
+      </ng-container>
+
+      <!-- DDD Column -->
+      <ng-container matColumnDef="DDD">
+        <th mat-header-cell *matHeaderCellDef> DDD </th>
+        <td mat-cell *matCellDef="lettelefone"> {{telefone.DDD}} </td>
+      </ng-container>
+
+      <!-- Numero Column -->
+      <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef> NUMERO DO TELEFONE </th>
+        <td mat-cell *matCellDef="lettelefone"> {{telefone.numero}} </td>
+      </ng-container>
+
+      <!-- Ações -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="lettelefone">
+          <div>
+            <button mat-button color="primary" (click)="editarTelefone(telefone)">Editar</button>
+            <button mat-button color="warn" (click)="deletarTelefone(telefone)">Excluir</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <hr>
+    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>

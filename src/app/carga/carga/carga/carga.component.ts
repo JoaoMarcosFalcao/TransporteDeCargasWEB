@@ -16,7 +16,7 @@ export class CargaComponent implements OnInit {
     private location: Location,
     private router: Router
   ) { }
-  displayedColumns: string[] = ['id', 'peso', 'altura', 'comprimento', 'largura', 'pesoOcupado', 'tipoCarga', 'acoes'];
+  displayedColumns: string[] = ['id', 'peso', 'altura', 'comprimento', 'largura', 'pesoCubado', 'tipoCarga', 'acoes'];
 
   carga: CargaDto = {
     id: 1,
@@ -24,8 +24,8 @@ export class CargaComponent implements OnInit {
     altura: 1.5,
     comprimento: 2.5,
     largura: 1.8,
-    pesoOcupado: 596,
-    tipoCarga: "Não Frágil",
+    pesoCubado: 7,
+    tipoCarga: "naoFragil",
   };
   cargas: CargaDto[];
 

@@ -1,1 +1,82 @@
-<p>veiculo-detalhe works!</p>
+<div class="card">
+  <div class="card-header">
+    Manutenção das Veiculos
+  </div>
+  <div class="card-body">
+    <div class="card-container">
+      <div>
+        <form [formGroup]="formVeiculo" (ngSubmit)="onSubmit"  class="form-exemplo">
+          <div style="display: none">
+            <mat-form-field class="example-full-width">
+              <mat-label>ID</mat-label>
+              <input matInput  formControlName="id">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Modelo</mat-label>
+            <input type="text" matInput placeholder="Ex. T-1500" formControlName="modelo"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.modelo.hasError('modelo') && !getControl.modelo.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Marca</mat-label>
+            <input type="text" matInput placeholder="Ex: Volvo"  required  formControlName="marca"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.marca.hasError('marca') && !getControl.marca.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Ano</mat-label>
+            <input type="text" matInput placeholder="Ex: 2021" required formControlName="ano"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.ano.hasError('ano') && !getControl.ano.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Placa</mat-label>
+            <input type="text" matInput placeholder="Ex: Placa tem 7 Digitos" required formControlName="placa"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.placa.hasError('placa') && !getControl.placa.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>RENAVAM</mat-label>
+            <input type="text" matInput placeholder="Ex: 98777888955" required formControlName="RENAVAM"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.RENAVAM.hasError('RENAVAM') && !getControl.RENAVAM.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Capacidade</mat-label>
+            <input type="text" matInput placeholder="Ex: 12.0000" required formControlName="capacidade"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.capacidade.hasError('capacidade') && !getControl.capacidade.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+          <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
