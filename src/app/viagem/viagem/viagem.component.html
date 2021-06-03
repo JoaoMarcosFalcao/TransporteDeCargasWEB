@@ -15,31 +15,31 @@
         <td mat-cell *matCellDef="letviagem"> {{viagem.id}} </td>
       </ng-container>
 
-      <!-- HoraPartida Column -->
+      <!-- Hora Partida Column -->
       <ng-container matColumnDef="horaPartida">
         <th mat-header-cell *matHeaderCellDef> Hora Partida</th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.horaPartida}} </td>
       </ng-container>
 
-      <!-- HoraChegada Column -->
+      <!-- Hora Chegada Column -->
       <ng-container matColumnDef="horaChegada">
         <th mat-header-cell *matHeaderCellDef> Hora Chegada </th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.horaChegada}} </td>
       </ng-container>
 
-      <!-- Data Saida -->
+      <!-- Data Saida Column -->
       <ng-container matColumnDef="dataSaida">
         <th mat-header-cell *matHeaderCellDef> Data Saida </th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.dataSaida}} </td>
       </ng-container>
 
-      <!-- Data Chegada -->
-      <ng-container matColumnDef="dataSaida">
+      <!-- Data Chegada Column -->
+      <ng-container matColumnDef="dataChegada">
         <th mat-header-cell *matHeaderCellDef> Data Chegada </th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.dataChegada}} </td>
       </ng-container>
 
-      <!-- Veiculo -->
+      <!-- Veiculo Column-->
       <ng-container matColumnDef="veiculo">
         <th mat-header-cell *matHeaderCellDef> Veiculo </th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.veiculo}} </td>
@@ -51,7 +51,7 @@
         <td mat-cell *matCellDef="letviagem"> {{viagem.motorista}} </td>
       </ng-container>
 
-      <!-- Freet Column -->
+      <!-- Frete Column -->
       <ng-container matColumnDef="frete">
         <th mat-header-cell *matHeaderCellDef> Frete </th>
         <td mat-cell *matCellDef="letviagem"> {{viagem.frete}} </td>
@@ -74,6 +74,7 @@
     </table>
 
     <hr>
+
     <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
   </div>
 </div>

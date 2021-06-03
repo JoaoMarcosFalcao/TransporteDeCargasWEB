@@ -15,7 +15,7 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Hora da Partida</mat-label>
-            <input type="text" matInput placeholder="Ex. 23:50" formControlName="horaPartida"
+            <input type="text" matInput placeholder="Ex. 23:50" required formControlName="horaPartida"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.horaPartida.hasError('horaPartida') && !getControl.horaPartida.hasError('required')">
@@ -49,18 +49,16 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Motorista</mat-label>
-            <input type="text" matInput placeholder="Ex: Digite o ID de um Motorista já cadastrado!" required formControlName="motorista"
-                   [errorStateMatcher]="matcher"
-                   required>
+            <input type="text" matInput placeholder="Ex: Digite o ID de um Motorista já cadastrado!"  formControlName="motorista"
+                   [errorStateMatcher]="matcher">
             <mat-error *ngIf="getControl.motorista.hasError('motorista') && !getControl.motorista.hasError('required')">
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Veiculo</mat-label>
-            <input type="text" matInput placeholder="Ex: Digite o ID de um Veiculo já cadastrado!" required formControlName="veiculo"
-                   [errorStateMatcher]="matcher"
-                   required>
+            <input type="text" matInput placeholder="Ex: Digite o ID de um Veiculo já cadastrado!"  formControlName="veiculo"
+                   [errorStateMatcher]="matcher">
             <mat-error *ngIf="getControl.veiculo.hasError('veiculo') && !getControl.veiculo.hasError('required')">
             </mat-error>
           </mat-form-field>
@@ -73,6 +71,7 @@
             <mat-error *ngIf="getControl.frete.hasError('frete') && !getControl.frete.hasError('required')">
             </mat-error>
           </mat-form-field>
+
           <hr>
 
           <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>

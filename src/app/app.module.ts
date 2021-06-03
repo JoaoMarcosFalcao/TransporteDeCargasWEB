@@ -22,6 +22,8 @@ import { TelefoneRoutingModule } from './telefone/telefone-routing.module';
 import { TelefoneModule } from './telefone/telefone.module';
 import { VeiculoModule } from './veiculo/veiculo.module';
 import { VeiculoRoutingModule } from './veiculo/veiculo-routing.module';
+import { ViagemRoutingModule } from './viagem/viagem-routing.module';
+import { ViagemModule } from './viagem/viagem.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -38,6 +40,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     EnderecoModule,
     CargaModule,
     VeiculoModule,
+    ViagemModule,
     TelefoneModule,
     HttpClientModule,
     MatSnackBarModule,
@@ -50,6 +53,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     CargaRoutingModule,
     TelefoneRoutingModule,
     VeiculoRoutingModule,
+    ViagemRoutingModule,
     LoginModule
   ],
   providers: [],

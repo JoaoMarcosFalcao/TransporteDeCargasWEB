@@ -102,12 +102,12 @@ export class ViagemDetalheComponent implements OnInit, ErrorStateMatcher {
     this.viagem = this.formViagem.value;
     if (this.viagem.id === null){
       this.viagemService.salvarViagem(this.viagem).subscribe(() => {
-        this.viagemService.showMessage('Viagem salvo com sucesso', false);
+        this.viagemService.showMessage('Viagem salva com sucesso', false);
       });
       this.router.navigate(['/viagem']);
     }else{
       this.viagemService.editarViagem(this.viagem).subscribe(() => {
-        this.viagemService.showMessage('Viagem salvo com sucesso', false);
+        this.viagemService.showMessage('Viagem salva com sucesso', false);
       });
       this.router.navigate(['/viagem']);
     }

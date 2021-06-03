@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    Manutenção das Veiculos
+    Manutenção dos Veiculos
   </div>
   <div class="card-body">
     <div class="card-container">
@@ -66,6 +66,7 @@
             <mat-error *ngIf="getControl.capacidade.hasError('capacidade') && !getControl.capacidade.hasError('required')">
             </mat-error>
           </mat-form-field>
+
           <hr>
 
           <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
