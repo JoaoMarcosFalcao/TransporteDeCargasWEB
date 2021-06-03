@@ -24,7 +24,7 @@ export class ViagemComponent implements OnInit {
     horaPartida: '13:00',
     horaChegada: '19:30',
     dataSaida: new Date(),
-    dataChegada: new Date,
+    dataChegada: new Date(),
     veiculo: 1,
     motorista: 1,
     frete: 2.000
