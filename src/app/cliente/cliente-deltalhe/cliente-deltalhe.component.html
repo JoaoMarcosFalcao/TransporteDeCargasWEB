@@ -7,13 +7,13 @@
       <div>
         <form [formGroup]="formCliente" (ngSubmit)="onSubmit"  class="form-exemplo">
           <div style="display: none">
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>ID</mat-label>
               <input matInput  formControlName="id">
             </mat-form-field>
           </div>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome</mat-label>
             <input type="text" matInput placeholder="Ex. Pedro" formControlName="nome"
                    [errorStateMatcher]="matcher"
@@ -23,7 +23,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>CPF</mat-label>
             <input type="text" matInput placeholder="Ex: 999.999.999-99"
                    mask="000.000.000-99" required  formControlName="cpf"
@@ -34,7 +34,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
             <input type="text" matInput placeholder="Ex: email@hotmail.com"
                    attach="@hotmail.com" required formControlName="email"
@@ -45,7 +45,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Endereco_id</mat-label>
             <input type="text" matInput placeholder="Ex: 1"  [errorStateMatcher]="matcher"
                    [errorStateMatcher]="matcher">
@@ -55,9 +55,6 @@
           </mat-form-field>
 
           <hr>
-
-          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
-
 
         </form>
       </div>

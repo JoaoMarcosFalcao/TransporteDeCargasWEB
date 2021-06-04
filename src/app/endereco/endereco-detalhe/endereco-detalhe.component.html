@@ -7,13 +7,13 @@
       <div>
         <form [formGroup]="formEndereco" (ngSubmit)="onSubmit"  class="form-exemplo">
           <div style="display: none">
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>ID</mat-label>
               <input matInput  formControlName="id">
             </mat-form-field>
           </div>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Rua</mat-label>
             <input type="text" matInput placeholder="Ex. Rua X" formControlName="rua"
                    [errorStateMatcher]="matcher"
@@ -23,7 +23,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Numero</mat-label>
             <input type="text" matInput placeholder="Ex. 800" formControlName="numero"
                    [errorStateMatcher]="matcher"
@@ -33,7 +33,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Complemento</mat-label>
             <input type="text" matInput placeholder="Ex: Perto da Loja de Roupa"  formControlName="complemento"
                    [errorStateMatcher]="matcher"
@@ -43,7 +43,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Bairro</mat-label>
             <input type="text" matInput placeholder="Ex: Serra Azul"  formControlName="bairro"
                    [errorStateMatcher]="matcher"
@@ -53,7 +53,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Cidade</mat-label>
             <input type="text" matInput placeholder="Ex: Lagoinha"  formControlName="cidade"
                    [errorStateMatcher]="matcher"
@@ -63,7 +63,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Estado</mat-label>
             <input type="text" matInput placeholder="Ex: Mato Grosso"  formControlName="estado"
                    [errorStateMatcher]="matcher"

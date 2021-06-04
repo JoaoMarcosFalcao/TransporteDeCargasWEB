@@ -1,19 +1,19 @@
 <div class="card">
   <div class="card-header">
-    Manutenção das Viagens
+    Cadastro das Viagens
   </div>
   <div class="card-body">
     <div class="card-container">
       <div>
         <form [formGroup]="formViagem" (ngSubmit)="onSubmit"  class="form-exemplo">
           <div style="display: none">
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" appearance="fill">>
               <mat-label>ID</mat-label>
               <input matInput  formControlName="id">
             </mat-form-field>
           </div>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Hora da Partida</mat-label>
             <input type="text" matInput placeholder="Ex. 23:50" required formControlName="horaPartida"
                    [errorStateMatcher]="matcher"
@@ -22,7 +22,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Hora da Chegada</mat-label>
             <input type="text" matInput placeholder="Ex: 07:00"  required  formControlName="horaChegada"
                    [errorStateMatcher]="matcher"
@@ -32,22 +32,31 @@
           </mat-form-field>
 
 
-          <mat-form-field class="example-full-width">
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Data da Saida</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dataSaida">
+            <input matInput [matDatepicker]="picker" formControlName="dataSaida" required [errorStateMatcher]="matcher"
+                   required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="getControl.dataSaida.hasError('dataSaida') && !getControl.dataSaida.hasError('required')">
+            </mat-error>
           </mat-form-field>
+          </div>
 
-
-          <mat-form-field class="example-full-width">
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Data da Chegada</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dataChegada">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="picker2" formControlName="dataChegada" required [errorStateMatcher]="matcher"
+                   required>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error *ngIf="getControl.dataChegada.hasError('dataChegada') && !getControl.dataChegada.hasError('required')">
+            </mat-error>
           </mat-form-field>
+          </div>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Motorista</mat-label>
             <input type="text" matInput placeholder="Ex: Digite o ID de um Motorista já cadastrado!"  formControlName="motorista"
                    [errorStateMatcher]="matcher">
@@ -55,7 +64,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Veiculo</mat-label>
             <input type="text" matInput placeholder="Ex: Digite o ID de um Veiculo já cadastrado!"  formControlName="veiculo"
                    [errorStateMatcher]="matcher">
@@ -63,7 +72,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Frete</mat-label>
             <input type="text" matInput placeholder="Ex: 1.6000" required formControlName="frete"
                    [errorStateMatcher]="matcher"

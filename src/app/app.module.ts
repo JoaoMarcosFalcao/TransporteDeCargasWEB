@@ -24,6 +24,8 @@ import { VeiculoModule } from './veiculo/veiculo.module';
 import { VeiculoRoutingModule } from './veiculo/veiculo-routing.module';
 import { ViagemRoutingModule } from './viagem/viagem-routing.module';
 import { ViagemModule } from './viagem/viagem.module';
+import { RotaRoutingModule } from './rota/rota-routing.module';
+import { RotaModule } from './rota/rota.module';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -39,6 +41,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MotoristaModule,
     EnderecoModule,
     CargaModule,
+    RotaModule,
     VeiculoModule,
     ViagemModule,
     TelefoneModule,
@@ -53,6 +56,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     CargaRoutingModule,
     TelefoneRoutingModule,
     VeiculoRoutingModule,
+    RotaRoutingModule,
     ViagemRoutingModule,
     LoginModule
   ],

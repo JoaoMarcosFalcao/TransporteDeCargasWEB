@@ -1,1 +1,62 @@
-<p>rota works!</p>
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Listagem das Rotas
+    </h1>
+  </div>
+
+  <br>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="letRota"> {{rota.id}} </td>
+      </ng-container>
+
+      <!-- Cidade Saida -->
+      <ng-container matColumnDef="cidadeSaida">
+        <th mat-header-cell *matHeaderCellDef> CIDADE DE SAIDA </th>
+        <td mat-cell *matCellDef="let Rota"> {{rota.cidadeSaida}} </td>
+      </ng-container>
+
+      <!-- Cidade Chegada Column -->
+      <ng-container matColumnDef="cidadeChegada">
+        <th mat-header-cell *matHeaderCellDef> DDD </th>
+        <td mat-cell *matCellDef="let Rota"> {{rota.cidadeChegada}} </td>
+      </ng-container>
+
+      <!-- Distancia Column -->
+      <ng-container matColumnDef="distancia">
+        <th mat-header-cell *matHeaderCellDef> DISTANCIA ENTRE AS CIDADES </th>
+        <td mat-cell *matCellDef="let Rota"> {{rota.distancia}} Quilômetros </td>
+      </ng-container>
+
+      <!-- Cidades Paradas Column -->
+      <ng-container matColumnDef="cidadesParadas">
+        <th mat-header-cell *matHeaderCellDef> CIDADES QUE IRA PASSAR </th>
+        <td mat-cell *matCellDef="let Rota"> {{rota.cidadesParadas}} </td>
+      </ng-container>
+
+
+      <!-- Ações -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="letRota">
+          <div>
+            <button mat-button color="primary" (click)="editarRota(rota)">Editar</button>
+            <button mat-button color="warn" (click)="deletarRota(rota)">Excluir</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <hr>
+    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+</div>

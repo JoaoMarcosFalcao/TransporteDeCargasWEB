@@ -1,1 +1,63 @@
-<p>rota-detalhe works!</p>
+<div class="card">
+  <div class="card-header">
+    Manutenção das Rotas
+  </div>
+  <div class="card-body">
+    <div class="card-container">
+      <div>
+        <form [formGroup]="formRota" (ngSubmit)="onSubmit"  class="form-exemplo">
+          <div style="display: none">
+            <mat-form-field class="example-full-width">
+              <mat-label>ID</mat-label>
+              <input matInput  formControlName="id">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cidade Saida</mat-label>
+            <input type="text" matInput placeholder="Ex. Barra do Garças" formControlName="cidadeSaida"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.cidadeSaida.hasError('cidadeSaida') && !getControl.cidadeSaida.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cidade Chegada</mat-label>
+            <input type="text" matInput placeholder="Ex: Vila Rica"  required  formControlName="cidadeChegada"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.cidadeChegada.hasError('cidadeChegada') && !getControl.cidadeChegada.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Distancia Entre as Cidades</mat-label>
+            <input matInput type="distancia" placeholder="0">
+            <span matPrefix>&nbsp;</span>
+            <span matSuffix>Quilômetros</span>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cidade Paradas</mat-label>
+            <input type="text" matInput placeholder="Ex: Vila Rica, Agua Boa, Butaiba."  required  formControlName="cidadesParadas"
+                   [errorStateMatcher]="matcher"
+                   required>
+            <mat-error *ngIf="getControl.cidadesParadas.hasError('cidadesParadas') && !getControl.cidadesParadas.hasError('required')">
+            </mat-error>
+          </mat-form-field>
+
+          <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

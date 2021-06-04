@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     <h1>
-      Listagem das Telefones
+      Lista dos Telefones
     </h1>
   </div>
 
@@ -17,14 +17,14 @@
 
       <!-- Codigo de Area Column -->
       <ng-container matColumnDef="codigoArea">
-        <th mat-header-cell *matHeaderCellDef> CODIGO DE ARE </th>
-        <td mat-cell *matCellDef="lettelefone"> {{telefone.codigoArea}} </td>
+        <th mat-header-cell *matHeaderCellDef> CÓDIGO DE ÁREA </th>
+        <td mat-cell *matCellDef="lettelefone"> +{{telefone.codigoArea}} </td>
       </ng-container>
 
       <!-- DDD Column -->
       <ng-container matColumnDef="DDD">
         <th mat-header-cell *matHeaderCellDef> DDD </th>
-        <td mat-cell *matCellDef="lettelefone"> {{telefone.DDD}} </td>
+        <td mat-cell *matCellDef="lettelefone"> ({{telefone.DDD}}) </td>
       </ng-container>
 
       <!-- Numero Column -->
