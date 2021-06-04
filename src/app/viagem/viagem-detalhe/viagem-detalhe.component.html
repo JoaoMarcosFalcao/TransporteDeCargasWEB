@@ -72,13 +72,11 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
             <mat-label>Frete</mat-label>
-            <input type="text" matInput placeholder="Ex: 1.6000" required formControlName="frete"
-                   [errorStateMatcher]="matcher"
-                   required>
-            <mat-error *ngIf="getControl.frete.hasError('frete') && !getControl.frete.hasError('required')">
-            </mat-error>
+            <input matInput type="pesoCubado" placeholder="0">
+            <span matPrefix>R$&nbsp;</span>
+            <span matSuffix>.</span>
           </mat-form-field>
 
           <hr>

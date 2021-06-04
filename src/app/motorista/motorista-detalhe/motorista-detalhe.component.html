@@ -52,10 +52,10 @@
           <div>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Validade da CNH</mat-label>
-            <input matInput [matDatepicker]="picker3" formControlName="validadecnh" required [errorStateMatcher]="matcher"
+            <input matInput [matDatepicker]="picker" formControlName="validadecnh" required [errorStateMatcher]="matcher"
                    required>
-            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-            <mat-datepicker #picker3></mat-datepicker>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="getControl.validadecnh.hasError('validadecnh') && !getControl.validadecnh.hasError('required')">
             </mat-error>
           </mat-form-field>

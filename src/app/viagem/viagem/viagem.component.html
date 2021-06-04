@@ -54,7 +54,7 @@
       <!-- Frete Column -->
       <ng-container matColumnDef="frete">
         <th mat-header-cell *matHeaderCellDef> Frete </th>
-        <td mat-cell *matCellDef="let viagem"> {{viagem.frete}} </td>
+        <td mat-cell *matCellDef="let viagem"> R${{viagem.frete}} </td>
       </ng-container>
 
       <!-- Ações -->
@@ -74,7 +74,5 @@
     </table>
 
     <hr>
-
-    <button mat-stroked-button color="primary" (click)="salvar()">Salvar</button>
   </div>
 </div>

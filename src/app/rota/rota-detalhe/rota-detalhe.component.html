@@ -1,52 +1,59 @@
 <div class="card">
   <div class="card-header">
-    Manutenção das Rotas
+    Manutenção das Rotas:
   </div>
   <div class="card-body">
     <div class="card-container">
       <div>
         <form [formGroup]="formRota" (ngSubmit)="onSubmit"  class="form-exemplo">
           <div style="display: none">
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>ID</mat-label>
               <input matInput  formControlName="id">
             </mat-form-field>
           </div>
 
+          <div>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Cidade Saida</mat-label>
-            <input type="text" matInput placeholder="Ex. Barra do Garças" formControlName="cidadeSaida"
+            <mat-label> Cidade Saida </mat-label>
+            <input type="text" matInput placeholder="Ex. Barra da Tijuca" formControlName="cidadeSaida"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.cidadeSaida.hasError('cidadeSaida') && !getControl.cidadeSaida.hasError('required')">
+              Digite uma Cidade valida!
             </mat-error>
           </mat-form-field>
+         </div>
 
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Cidade Chegada</mat-label>
-            <input type="text" matInput placeholder="Ex: Vila Rica"  required  formControlName="cidadeChegada"
+            <mat-label> Cidade Chegada </mat-label>
+            <input type="text" matInput placeholder="Ex. Rio de Janeiro" formControlName="cidadeChegada"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.cidadeChegada.hasError('cidadeChegada') && !getControl.cidadeChegada.hasError('required')">
+              Digite uma Cidade valida!
             </mat-error>
           </mat-form-field>
 
+         <div>
           <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
-            <mat-label>Distancia Entre as Cidades</mat-label>
+            <mat-label> Distancia Entre as Cidades </mat-label>
             <input matInput type="distancia" placeholder="0">
             <span matPrefix>&nbsp;</span>
             <span matSuffix>Quilômetros</span>
           </mat-form-field>
-
+        </div>
+        <div>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Cidade Paradas</mat-label>
-            <input type="text" matInput placeholder="Ex: Vila Rica, Agua Boa, Butaiba."  required  formControlName="cidadesParadas"
+            <mat-label> Cidades que vai Passar </mat-label>
+            <input type="text" matInput placeholder="Ex: Adicione todas as cidades com uma virgura para separalas"  formControlName="cidadesParadas"
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.cidadesParadas.hasError('cidadesParadas') && !getControl.cidadesParadas.hasError('required')">
+              Digite Cidades validas!
             </mat-error>
           </mat-form-field>
-
+        </div>
           <hr>
 
           <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
@@ -60,4 +67,3 @@
   </div>
 
 </div>
-

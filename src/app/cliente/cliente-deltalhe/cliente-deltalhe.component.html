@@ -19,18 +19,16 @@
                    [errorStateMatcher]="matcher"
                    required>
             <mat-error *ngIf="getControl.nome.hasError('nome') && !getControl.nome.hasError('required')">
-              Digite um nome valida!
+              Digite um Nome valido!
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>CPF</mat-label>
-            <input type="text" matInput placeholder="Ex: 999.999.999-99"
-                   mask="000.000.000-99" required  formControlName="cpf"
-                   [errorStateMatcher]="matcher"
-                   required>
+            <input type="text" matInput placeholder="Ex: 999.999.999-99"  mask="000.000.000-00" required  formControlName="cpf"
+                   [errorStateMatcher]="matcher"  required>
             <mat-error *ngIf="getControl.cpf.hasError('cpf') && !getControl.cpf.hasError('required')">
-              Digite um cpf valido!
+              Digite um CPF valido!
             </mat-error>
           </mat-form-field>
 
@@ -55,6 +53,8 @@
           </mat-form-field>
 
           <hr>
+
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
 
         </form>
       </div>

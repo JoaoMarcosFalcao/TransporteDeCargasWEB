@@ -20,11 +20,11 @@ export class RotaComponent implements OnInit {
   displayedColumns: string[] = ['id', 'cidadeSaida', 'cidadeChegada', 'distancia','cidadesParadas', 'acoes'];
 
   rota: RotaDto = {
-    id: 1,
-    cidadeSaida: 'Barra do Garças',
+    id: 0,
+    cidadeSaida: 'BG',
     cidadeChegada: 'Vila Rica',
     distancia: 600,
-    cidadesParadas: 'Agua Boa, Sorriso, Ituiba',
+    cidadesParadas: 'Agua Boa, Sorriso, Ituiba'
   };
   rotas: RotaDto[];
 

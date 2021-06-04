@@ -14,16 +14,14 @@
           </div>
 
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>CodigoArea</mat-label>
+            <mat-label> Código de Área</mat-label>
             <input type="text" matInput placeholder="Ex. 55" formControlName="codigoArea"
                    [errorStateMatcher]="matcher"
                    required>
-            <mat-error *ngIf="getControl.codigoArea.hasError('codigoArea') && !getControl.codigoArea.hasError('required')">
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>DDD</mat-label>
+            <mat-label> DDD </mat-label>
             <input type="text" matInput placeholder="Ex: 66"  required  formControlName="DDD"
                    [errorStateMatcher]="matcher"
                    required>
@@ -32,7 +30,7 @@
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Numero</mat-label>
+            <mat-label> Número do Telefone </mat-label>
             <input type="text" matInput placeholder="Ex: 9877788-8955" required formControlName="numero"
                    [errorStateMatcher]="matcher"
                    required>
@@ -42,6 +40,7 @@
 
           <hr>
 
+          <button mat-button type="submit" (click)="onSubmit()" color="primary"> Salvar </button>
 
         </form>
       </div>
